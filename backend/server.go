@@ -12,7 +12,7 @@ func redirectBasePath(c *gin.Context) {
 	c.Redirect(http.StatusMovedPermanently, "/app")
 }
 
-// Function takes care of configuring the the base
+// Function takes care of configuring the the base route
 func serverConfiguration(router *gin.Engine) {
 	router.Static("/app", filepath.Join("..", "frontend", "dist"))
 	router.GET("/", redirectBasePath)
@@ -23,5 +23,5 @@ func main() {
 	// Configure the server redirects and static files
 	serverConfiguration(router)
 
-	router.Run(":8080")
+	router.Run(":9090")
 }
